@@ -9,3 +9,12 @@ def loginView(request):
 
 def aboutView(request):
     return render(request,"about.html")
+
+def contactView(request):
+    return render(request,"contact.html")
+
+def adminView(request):
+    return render(request,"admin.html")
+
+def userView(request):
+    return render(request,"user.html")
