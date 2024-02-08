@@ -1,8 +1,8 @@
 from django.shortcuts import render
-
+from careers_web.models import Career_feedback
 # Create your views here.
+
 def home(request):
-    def home(request):
     career_records=Careers_hub.objects.all()
     feedback_records=Career_feedback.objects.filter(status="Approved")
     context={'feedback_records':feedback_records,'career_records':career_records}
