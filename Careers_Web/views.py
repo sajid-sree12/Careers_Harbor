@@ -43,8 +43,17 @@ def login_views(request):
             return redirect('login')
     return render(request,'error.html')
 
-def aboutView(request):
-    return render(request,"about.html")
+@login_required(login_url='login')
+def User_views(request):
+    if request.method == 'POST':
+        c_name = request.POST.get('c_name')
+        c_link = request.POST.get('c_link')
+        obj = Careers_hub(company_name=c_name, company_link=c_link)
+        obj.save()
+        messages.success(request, 'You are inserted succecessfully..')
+        return redirect('User')
+
+    return render(request, 'user.html')  
 
 def contactView(request):
     return render(request,"contact.html")
