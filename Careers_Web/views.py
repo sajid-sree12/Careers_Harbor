@@ -55,6 +55,11 @@ def User_views(request):
 
     return render(request, 'user.html')
 
+@login_required(login_url='login')
+def admin_views(request):
+    result = Career_feedback.objects.filter(status="pending")
+    return render(request, 'admin.html', {'data': result})  
+
 def feedback_approval(request, pk):
     if Career_feedback.objects.filter(id=pk).exists():
         obj = Career_feedback.objects.get(id=pk)
@@ -65,7 +70,12 @@ def feedback_approval(request, pk):
     else:
         messages.error(request, 'Feedback Not Found...')
         return redirect('AdminPanel')
-          
+
+ 
+def logout_views(request):
+    logout(request)
+    messages.info(request,'You are successfully logged out...')
+    return redirect('login')
 
 def contactView(request):
     return render(request,"contact.html")
