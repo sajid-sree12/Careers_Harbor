@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="{% static 'css/style.css' %}">
    </head>
    <body>
-    <section>
+    <!--section>
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content bg-transparent border-0">
@@ -24,11 +24,11 @@
                   <form class="">
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label"><i class="fa-regular fa-user mx-2" style="color: #ffffff;"></i>Name</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label"><i class="fa-regular fa-star mx-2" style="color: #ffffff;"></i>Rating</label>
-                      <input type="text" class="form-control" id="exampleInputPassword1">
+                      <input name="c_link" type="text" class="form-control" id="exampleInputPassword1">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label"><i class="fa-regular fa-comment mx-2" style="color: #ffffff;"></i>Feedback</label>
@@ -44,7 +44,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section-->
       <section>
         <nav class="navbar navbar-expand-lg nbg">
             <div class="container-fluid bg-transparent">
@@ -64,13 +64,13 @@
                      <li class="nav-item mx-1">
                         <a class="nav-link active text-white  mb-1" aria-current="page" href="{% url 'About' %}"><span><i class="fa-solid fa-user mx-2"></i></span>About</a>
                      </li>
-                     <li class="nav-item mx-1">
-                      <a type="button" class="nav-link active text-white  mb-1" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                     <!--li class="nav-item mx-1">
+                      <a type="button" class="nav-link active text-white  mb-1" aria-current="page" href="{% url 'feedback' %}" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         <span><i class="fa-solid fa-comment mx-2"></i></span>Feedback</a>
-                    </li>
+                    </!li-->
                   </ul>
                   <div class="d-flex" role="search">
-                     <a class="btn btn-success bg-transparent border-light w-100" type="submit"><i class="fa-solid fa-person-running mx-2" style="color: #ffffff;"></i>Sign Out</a>
+                     <a href="{% url 'logout' %}" class="btn btn-success bg-transparent border-light w-100" type="submit"><i class="fa-solid fa-person-running mx-2" style="color: #ffffff;"></i>Sign Out</a>
                   </div>
                </div>
             </div>
@@ -79,24 +79,26 @@
       <section class="d-flex justify-content-center" style="min-height:77vh;background-color: #000000;">
         <div class="container col-lg-8">
            <div class="container col-lg-6">
-            <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
-              This is for messeges
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
+            {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}  alert-dismissible fade show mt-3" role="alert">
+                            {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+            {% endfor %}
            </div> 
            <h3 class="text-light mb-lg-5 mt-5 fw-light">Post a Link</h3>
            <div class="row">
               <div class="col m-1 px-0">
                  <div class="">
                     <div class="p-5 h-100 w-100 modal-bg  border-bg-purple text-white">
-                       <form class="">
+                       <form method="POST">{% csrf_token %}
                           <div class="mb-3">
                              <label for="exampleInputEmail1" class="form-label"><i class="fa-regular fa-building mx-2" style="color: #ffffff;"></i>Company Name</label>
-                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                             <input name="c_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                           </div>
                           <div class="mb-3">
                              <label for="exampleInputPassword1" class="form-label"><i class="fa-solid fa-link mx-2" style="color: #ffffff;"></i>Careers link</label>
-                             <textarea class="form-control" id="exampleInputPassword1" rows="3"></textarea>
+                             <textarea name="c_link" class="form-control" id="exampleInputPassword1" rows="3"></textarea>
                           </div>
                           <div class="d-flex justify-content-center">
                              <button type="submit" class="btn btn-m btn-primary border">Submit</button>

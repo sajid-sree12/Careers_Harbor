@@ -1,0 +1,35 @@
+<section>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-transparent border-0">
+          <div class="modal-header border-0">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Feedback</h1>
+            <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="">
+              <div class="p-5 h-100 w-100 modal-bg  border-bg-purple">
+                <form method="POST" action="{% url "feedback" %}">{% csrf_token %}
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"><i class="fa-regular fa-user mx-2" style="color: #ffffff;" ></i>Name</label>
+                    <input name="f_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" maxlength="15" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"><i class="fa-regular fa-star mx-2" style="color: #ffffff;"></i>Rating</label>
+                    <input name="f_rating" type="number" class="form-control" id="exampleInputPassword1" max="10" min="1" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"><i class="fa-regular fa-comment mx-2" style="color: #ffffff;"></i>Feedback</label>
+                    <input name="feedback" type="text" class="form-control" id="exampleInputPassword1" maxlength="" required>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                      <button type="submit" class="btn btn-m btn-primary border">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

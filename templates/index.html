@@ -9,41 +9,7 @@
       <link rel="stylesheet" href="{% static 'css/style.css' %}">
    </head>
    <body>
-      <section>
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content bg-transparent border-0">
-              <div class="modal-header border-0">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Feedback</h1>
-                <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body p-0">
-                <div class="">
-                  <div class="p-5 h-100 w-100 modal-bg  border-bg-purple">
-                    <form class="">
-                      <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label"><i class="fa-regular fa-user mx-2" style="color: #ffffff;"></i>Name</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label"><i class="fa-regular fa-star mx-2" style="color: #ffffff;"></i>Rating</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1">
-                      </div>
-                      <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label"><i class="fa-regular fa-comment mx-2" style="color: #ffffff;"></i>Feedback</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                      </div>
-                      <div class="d-flex justify-content-center">
-                          <button type="submit" class="btn btn-m btn-primary border">Submit</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    {% include "feedback.html" %}
       <section>
         <nav class="navbar navbar-expand-lg nbg">
             <div class="container-fluid bg-transparent">
@@ -70,7 +36,7 @@
                </ul>
                   
                   <div class="d-flex" role="search">
-                     <a class="btn btn-success bg-transparent border-light w-100" type="submit" href="{% url 'Login' %}"><i class="fa-solid fa-right-to-bracket mx-2" style="color: #ffffff;"></i>Login</a>
+                     <a class="btn btn-success bg-transparent border-light w-100" type="submit" href="{% url 'login' %}"><i class="fa-solid fa-right-to-bracket mx-2" style="color: #ffffff;"></i>Login</a>
                   </div>
                </div>
             </div>
@@ -85,103 +51,24 @@
          </div>
          <div class="container">
          <div class="row row-cols-1 row-cols-lg-3">
+          {% for record in career_records %}
             <div class="col p-2">
                <div class="card">
                   <div class="img"></div>
                   <div class="textBox">
                      <div class="textContent">
-                        <p class="h1">Infosys</p>
-                        <a href="" class="btn btn-light text-clr m-1 border-0" style="background-color: rgb(255, 255, 255);">Click here</a>
+                        <p class="h1">{{ record.company_name }}</p>
+                        <a href="{{ record.company_link }}" target="_blank" class="btn btn-light text-clr m-1 border-0" style="background-color: rgb(255, 255, 255);">Click here</a>
                      </div>
                      <div class="d-flex">
-                        <p class="p"><span class="span">12 min ago</span></p>
+                        <p class="p"><span class="span">{{ record.posted }}</span></p>
                      </div>
                      <div>
                      </div>
                   </div>
                </div>
             </div>
-            <div class="col p-2">
-               <div class="card">
-                  <div class="img"></div>
-                  <div class="textBox">
-                     <div class="textContent">
-                        <p class="h1">TCS</p>
-                        <a href="" class="btn btn-light text-clr m-1 border-0" style="background-color: rgb(255, 255, 255);">Click here</a>
-                     </div>
-                     <div class="d-flex">
-                        <p class="p"><span class="span">12 min ago</span></p>
-                     </div>
-                     <div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col p-2">
-               <div class="card">
-                  <div class="img"></div>
-                  <div class="textBox">
-                     <div class="textContent">
-                        <p class="h1">IBM</p>
-                        <a href="" class="btn btn-light text-clr m-1 border-0" style="background-color: rgb(255, 255, 255);">Click here</a>
-                     </div>
-                     <div class="d-flex">
-                        <p class="p"><span class="span">12 min ago</span></p>
-                     </div>
-                     <div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col p-2">
-              <div class="card">
-                 <div class="img"></div>
-                 <div class="textBox">
-                    <div class="textContent">
-                       <p class="h1">IBM</p>
-                       <a href="" class="btn btn-light text-clr m-1 border-0" style="background-color: rgb(255, 255, 255);">Click here</a>
-                    </div>
-                    <div class="d-flex">
-                       <p class="p"><span class="span">12 min ago</span></p>
-                    </div>
-                    <div>
-                    </div>
-                 </div>
-              </div>
-            </div>
-            <div class="col p-2">
-              <div class="card">
-                <div class="img"></div>
-                <div class="textBox">
-                    <div class="textContent">
-                      <p class="h1">IBM</p>
-                      <a href="" class="btn btn-light text-clr m-1 border-0" style="background-color: rgb(255, 255, 255);">Click here</a>
-                    </div>
-                    <div class="d-flex">
-                      <p class="p"><span class="span">12 min ago</span></p>
-                    </div>
-                    <div>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="col p-2">
-              <div class="card">
-                <div class="img"></div>
-                <div class="textBox">
-                    <div class="textContent">
-                      <p class="h1">IBM</p>
-                      <a href="" class="btn btn-light text-clr m-1 border-0" style="background-color: rgb(255, 255, 255);">Click here</a>
-                    </div>
-                    <div class="d-flex">
-                      <p class="p"><span class="span">12 min ago</span></p>
-                    </div>
-                    <div>
-                    </div>
-                </div>
-              </div>
-            </div>
-            
+            {% endfor %}
           </div>
       </section>
       <section class="fixed-bottom">
@@ -194,22 +81,43 @@
                       <div class="d-flex justify-content-end bg-transparent"><button class="btn" id="close-btn"><i class="fa-solid fa-x fa-xl" style="color: #f5f5f5;"></i></button></div>
                       <div class="card2 p-2 bg-black">
                         
-                        <div class="header">
+                        <div class="header  ">
                           <span class="icon">
                               <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path clip-rule="evenodd" d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z" fill-rule="evenodd"></path>
                               </svg>
                           </span>
-                          <p class="alert mb-0">New message!</p>
+                          <p class="alert mb-0 text-white">Gowthami M - &nbsp; <i class="fa-regular fa-star" style="color: #ffea00;"></i> 9</p>
                         </div>
-                        <p class="message mt-0 mb-0">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde
-                          vel adipisci blanditiis voluptates eum. Nam, cum minima?
+                        <p class="message mt-0 mb-0 p-1 text-white">
+                          Nice Decision to provide all companies careers !
                         </p>
                         
                     </div>
                     </div>
                 </div>
+                {% for feedback in feedback_records %}
+                <div class="carousel-item" data-bs-interval="2000">
+                  <div class="container col-lg-10 px-5 py-5 pt-0 pb-0">
+                    <div class="d-flex justify-content-end bg-transparent"><button class="btn" id="close-btn"><i class="fa-solid fa-x fa-xl" style="color: #f5f5f5;"></i></button></div>
+                    <div class="card2 p-2 bg-black">
+                      
+                      <div class="header">
+                        <span class="icon">
+                            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path clip-rule="evenodd" d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z" fill-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <p class="alert mb-0 text-white">{{ feedback.fullname }}- &nbsp; <i class="fa-regular fa-star" style="color: #ffea00;"></i> {{ feedback.rating }}</p>
+                        </div>
+                        <p class="message mt-0 mb-0 p-1 text-white">
+                          {{ feedback.feedback }}
+                        </p>
+                      
+                  </div>
+                  </div>
+              </div>
+                {% endfor %}
                 
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
