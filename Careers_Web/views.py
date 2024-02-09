@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from careers_web.models import Career_feedback
+from Careers_Web.models import Career_feedback,Career
 # Create your views here.
 
 def home(request):
@@ -53,7 +53,19 @@ def User_views(request):
         messages.success(request, 'You are inserted succecessfully..')
         return redirect('User')
 
-    return render(request, 'user.html')  
+    return render(request, 'user.html')
+
+def feedback_approval(request, pk):
+    if Career_feedback.objects.filter(id=pk).exists():
+        obj = Career_feedback.objects.get(id=pk)
+        obj.status = 'approved'
+        obj.save()
+        messages.info(request, 'Feedback Approved...')
+        return redirect('AdminPanel')
+    else:
+        messages.error(request, 'Feedback Not Found...')
+        return redirect('AdminPanel')
+          
 
 def contactView(request):
     return render(request,"contact.html")
