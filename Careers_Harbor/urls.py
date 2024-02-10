@@ -16,8 +16,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf.urls.static import static
+from . import settings
 
 urlpatterns = [
     path('',include('Careers_Web.urls')),
     path('admin/', admin.site.urls),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+#my static files are not being served
+#I have tried to add the following to settings.py:
+#STATIC_URL = '/static/'
+#STATIC_ROOT = 'static'
+#STATICFILES_DIRS = [BASE_DIR/'static']
+#and also added the following to urls.py:
+#urlpatterns = [
+#    path('',include('Careers_Web.urls')),
+#    path('admin/', admin.site.urls),
+#]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+#I have also tried to add the following to settings.py:
+#STATIC_URL = '/static/'
+#STATIC_ROOT = 'static'
+#STATICFILES_DIRS = [BASE_DIR/'static']

@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+.nbg{
+    background: linear-gradient(270deg,rgb(157, 77, 255),rgba(157, 77, 255, 0.701))
+}
+
+
+.container-bg{
+    background: url('../assets/images/cbg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}
+.text-bg{
+    backdrop-filter: blur(2px);
+}
+
+
+.card {
+    width: 100%;
+    height: 70px;
+    background: rgba(180, 118, 255, 0.833);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+  .img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: linear-gradient(#d7cfcf, #9198e5);
+  }
+  
+  .card:hover > .img {
+    transition: 0.5s ease-in-out;
+    background: linear-gradient(#9198e5, #712020);
+  }
+  
+  .textBox {
+    width: calc(100% - 90px);
+    margin-left: 10px;
+    color: white;
+    font-family: 'Poppins' sans-serif;
+  }
+  
+  .textContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .span {
+    font-size: 10px;
+  }
+  
+  .h1 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .p {
+    font-size: 12px;
+    font-weight: lighter;
+  }
+
+.text-clr{
+    color:rgba(139, 45, 255, 0.833) ;
+    font-weight: 600;
+}
+.text-clr:hover{
+    color: rgb(150, 115, 255);
+}
+
+body{
+
+    background: rgb(31, 31, 31);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    position: relative;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  background: rgb(92,42,205);
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  flex-wrap: wrap;
+  padding-left: 0px;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("../assests/images/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+.bgt{
+  backdrop-filter: blur(2px); 
+}
+
+
+.card2 {
+  min-height: 170px;
+  border-width: 1px;
+  border-color: rgba(219, 234, 254, 1);
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 1);
+  
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: rgba(96, 165, 250, 1);
+  padding: 0.5rem;
+  color: rgba(255, 255, 255, 1);
+}
+
+.icon svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.alert {
+  font-weight: 600;
+  color: rgba(107, 114, 128, 1);
+}
+
+.message {
+  margin-top: 1rem;
+  color: rgba(107, 114, 128, 1);
+}
+
+.actions {
+  margin-top: 1.5rem;
+}
+
+.actions a {
+  text-decoration: none;
+}
+
+.mark-as-read, .read {
+  display: inline-block;
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+.read {
+  background-color: rgba(59, 130, 246, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.mark-as-read {
+  margin-top: 0.5rem;
+  background-color: rgba(249, 250, 251, 1);
+  color: rgba(107, 114, 128, 1);
+  transition: all .15s ease;
+}
+
+.mark-as-read:hover {
+  background-color: rgb(230, 231, 233);
+}
+.nav-item{
+  border: 2px solid rgba(255, 255, 255, 0);
+}
+.nav-item:hover{
+  border-bottom: 2px solid white;
+  transition: 0.8s;
+  border-radius:5px;
+}
+
+.modal-bg{
+  background: rgb(139, 45, 255);
+  text-align: justify;
+  border-radius: 5px;
+}
+
+.modal-content{
+  color: white;
+}
+
+.btn-m{
+  background-color: rgba(139, 45, 255, 0);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.btn-m:hover{
+  border:1px solid rgb(139, 45, 255);
+  background-color: rgb(139, 45, 255);
+  color: white;
+  
+}
+
+#exampleInputEmail1{
+  border: 1px solid rgba(254, 253, 255, 0.833);
+  color: rgb(0, 0, 0);
+}
+#exampleInputPassword1{
+  border: 1px solid rgba(255, 255, 255, 0.833);
+  color: rgb(0, 0, 0);
+}
+
+.form-control{
+  background-color: transparent;
+}
+
+.contact-bg{
+  background: #ffffff;
+  text-align: justify;
+  border-radius: 5px;
+  border: none;
+}
+
+.card-bg{
+  border-radius: 10px;
+background: #000000;
+box-shadow:  20px 20px 60px #bebebe,
+             -5px -20px 60px #ffffff;
+}
+
+.btn-accept{
+  background-color: rgb(180, 255, 180);
+  border: 1px solid green;
+  color: green;
+}
+.btn-accept:hover{
+  background-color: rgb(86, 250, 86);
+}
+.btn-delete{
+  background-color: rgb(255, 189, 189);
+  border: 1px solid red;
+  color: red;
+}
+.btn-delete:hover{
+  background-color: rgb(255, 106, 106);
+}
