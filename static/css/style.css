@@ -50,7 +50,7 @@
     width: calc(100% - 90px);
     margin-left: 10px;
     color: white;
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Poppins','sans-serif';
   }
   
   .textContent {
@@ -93,7 +93,7 @@ body{
     -ms-background-size: cover;
     background-attachment: fixed;
     text-align: center;
-    position: relative;
+    position:relative;
 }
 
 
@@ -172,7 +172,7 @@ body{
   left: 0;
   width: 100%;
   height: 100px;
-  background: url("../assests/images/wave.png");
+  background: url("../assets/images/wave.png");
   background-size: 1000px 100px;
 }
 
