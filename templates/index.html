@@ -10,7 +10,7 @@
    </head>
    <body>
     {% include "feedback.html" %}
-      <section>
+      <section class="head sticky-top">
         <nav class="navbar navbar-expand-lg nbg">
             <div class="container-fluid bg-transparent">
               <a class="navbar-brand text-white" href="{% url 'home' %}">
@@ -54,15 +54,18 @@
       {% for record in career_records %}
       <div class="col p-2">
          <div class="card">
-            <div class="img"></div>
+            <!--div class="img"></div-->
             <div class="textBox">
                <div class="textContent">
+                <div>
                   <p class="h1">{{ record.company_name }}</p>
+                  <!--div class="text-start">
+                    <small class="p"><span class="span">{{ record.posted }}</span></small>
+                 </div-->
+                </div>
                   <a href="{{ record.company_link }}" target="_blank" class="btn btn-light text-clr m-1 border-0" style="background-color: rgb(255, 255, 255);">Click here</a>
                </div>
-               <div class="d-flex">
-                  <p class="p"><span class="span">{{ record.posted }}</span></p>
-               </div>
+               
                <div>
                </div>
             </div>
@@ -72,98 +75,7 @@
    </div>
 </div>
 </section>
-      <section class="fixed-bottom">
-         <div id="feedbacks" class="container-fluid bg-transparent p-2" style="z-index: 1;">
-          <div class="bg-transparent col-lg-4">
-            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <div class="container col-lg-10 px-5 py-5 pt-0 pb-0">
-                      <div class="d-flex justify-content-end bg-transparent"><button class="btn" id="close-btn" onclick="closeFeedback()"><i class="fa-solid fa-x fa-xl" style="color: #f5f5f5;"></i></button></div>
-                      <div class="card2 p-2 bg-black">
-                        
-                        <div class="header  ">
-                          <span class="icon">
-                              <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path clip-rule="evenodd" d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z" fill-rule="evenodd"></path>
-                              </svg>
-                          </span>
-                          <p class="alert mb-0 text-white">Gowthami M - &nbsp; <i class="fa-regular fa-star" style="color: #ffea00;"></i> 9</p>
-                        </div>
-                        <p class="message mt-0 mb-0 p-1 text-white">
-                          Nice Decision to provide all companies careers !
-                        </p>
-                        
-                    </div>
-                    </div>
-                </div>
-                {% for feedback in feedback_records %}
-                <div class="carousel-item" data-bs-interval="2000">
-                  <div class="container col-lg-10 px-5 py-5 pt-0 pb-0">
-                    <div class="d-flex justify-content-end bg-transparent"><button class="btn" id="close-btn" onclick="closeFeedback()"><i class="fa-solid fa-x fa-xl" style="color: #f5f5f5;"></i></button></div>
-                    <div class="card2 p-2 bg-black">
-                      
-                      <div class="header">
-                        <span class="icon">
-                            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                              <path clip-rule="evenodd" d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z" fill-rule="evenodd"></path>
-                            </svg>
-                        </span>
-                        <p class="alert mb-0 text-white">{{ feedback.fullname }}- &nbsp; <i class="fa-regular fa-star" style="color: #ffea00;"></i> {{ feedback.rating }}</p>
-                        </div>
-                        <p class="message mt-0 mb-0 p-1 text-white">
-                          {{ feedback.feedback }}
-                        </p>
-                      
-                  </div>
-                  </div>
-              </div>
-                {% endfor %}
-                
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <footer class="footer pt-0 pb-0 position-relative">
-              <!--div class="waves"> 
-                <div class="wave" id="wave1"></div>
-                <div class="wave" id="wave2"></div>
-                <div class="wave" id="wave3"></div>
-                <div class="wave" id="wave4"></div>
-                </div-->
-              <ul class="social-icon">
-                <li class="social-icon__item">
-                    <a class="social-icon__link" href="#">
-                      <ion-icon name="logo-facebook"></ion-icon>
-                    </a>
-                </li>
-                <li class="social-icon__item">
-                    <a class="social-icon__link" href="#">
-                      <ion-icon name="logo-linkedin"></ion-icon>
-                    </a>
-                </li>
-                <li class="social-icon__item">
-                    <a class="social-icon__link" href="#">
-                      <ion-icon name="logo-instagram"></ion-icon>
-                    </a>
-                </li>
-              </ul>
-              <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="{% url 'home' %}">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="{% url 'About' %}">About</a></li>
-                <li class="menu__item"><a class="menu__link" href="{% url 'contact' %}">Contact</a></li>
-              </ul>
-              <p class="mx-2">&copy;2024 Thopstech Students | All Rights Reserved</p>
-        </footer>
-      </section>
+      {% include 'footer.html' %}
       <script>
           function closeFeedback(){
             document.getElementById('feedbacks').style.display = 'none';

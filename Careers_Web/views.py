@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def home(request):
-    career_records=Careers_hub.objects.all()
+    career_records=Careers_hub.objects.all().order_by('company_name')
     feedback_records=Career_feedback.objects.filter(status="approved")
     context={'feedback_records':feedback_records,'career_records':career_records}
     if request.method=="POST":

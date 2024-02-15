@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-)cubu@02m0-nn@h8&kbt3bx(a-byemkpipj&!mn*&iod6+=nzw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.10']
 #'192.168.1.33'
 
 # Application definition
@@ -75,12 +75,13 @@ WSGI_APPLICATION = 'Careers_Harbor.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+}"""
+
 
 
 # Password validation
